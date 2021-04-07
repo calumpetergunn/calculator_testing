@@ -92,7 +92,11 @@ export default {
       this.runningTotal = parseFloat(this.previousTotal) * parseFloat(number);
     },
     divide(number) {
+      if (number === 0) {
+        this.runningTotal = 'error'
+      } else {
       this.runningTotal = parseFloat(this.previousTotal) / parseFloat(number);
+      }
     },
   },
 };
